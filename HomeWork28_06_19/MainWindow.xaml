@@ -5,8 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HomeWork28_06_19"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="MainWindow" Height="450" Width="463.75">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="221*"/>
+            <ColumnDefinition Width="236*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Name="urlAddressTextBox" materialDesign:HintAssist.Hint="URL Address" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10.4,10,13.6,345" Grid.Column="1" />
+        <TextBox Name="ipAddressTextBox" materialDesign:HintAssist.Hint="Ip Address" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="6,10,3.175,345" />
+        <Separator HorizontalAlignment="Left" Height="100" Margin="12,158,0,0" VerticalAlignment="Top" Width="416" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
+        <Button Click="GetHostNameButtonClick" Name="getHostNameButton" Content="Get Host Name" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="136"/>
+        <Button Click="GetIpButtonClick" Name="getIpButton" Content="Get Ip" HorizontalAlignment="Left" Margin="10.4,100,0,0" VerticalAlignment="Top" Width="136" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,137,0,0" TextWrapping="Wrap" Text="Host Name:" VerticalAlignment="Top" Height="27" Width="92" FontSize="14"/>
+        <TextBlock Name="hostNameTextBlock" HorizontalAlignment="Left" Margin="10,169,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="241" Width="92" FontSize="14"/>
         
+        <TextBlock HorizontalAlignment="Left" Margin="10.4,137,0,0" TextWrapping="Wrap" Text="Ip Address:" VerticalAlignment="Top" Height="27" Width="92" FontSize="14" Grid.Column="1"/>
+        <TextBlock Name="ipAddressTextBlock" HorizontalAlignment="Left" Margin="10.4,169,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="241" Width="92" FontSize="14" Grid.Column="1"/>
+
     </Grid>
 </Window>
